@@ -1,0 +1,27 @@
+{
+  "name": "ether/logs",
+  "description": "Access logs from the CP",
+  "version": "3.0.0",
+  "type": "craft-plugin",
+  "minimum-stability": "dev",
+  "require": {
+    "craftcms/cms": "^3.0.0-RC1"
+  },
+  "autoload": {
+    "psr-4": {
+      "ether\\logs\\": "src/"
+    }
+  },
+  "support": {
+    "issues": "https://github.com/ethercreative/logs"
+  },
+  "extra": {
+    "handle": "logs",
+    "name": "Logs",
+    "developer": "Ether Creative",
+    "developerUrl": "https://ethercreative.co.uk",
+
+    "class": "ether\\logs\\Logs",
+    "schemaVersion": "3.0.0"
+  }
+}

@@ -1,0 +1,13 @@
+<form>
+	<select name="log" onchange="this.parentNode.submit()">
+		{% for file in logFiles %}
+			<option{{ file == currentLog ? ' selected' }}>{{ file }}</option>
+		{% endfor %}
+	</select>
+</form>
+
+<hr>
+
+<pre style="max-width:calc(100vw - 498px);overflow:auto;padding:0 24px;margin-left:-24px;"><!--
+	--><code>{{ log }}</code>
+</pre>

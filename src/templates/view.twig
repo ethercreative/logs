@@ -1,13 +1,13 @@
 <form>
-	<select name="log" onchange="this.parentNode.submit()">
+	<select id="__logSwitch">
 		{% for file in logFiles %}
 			<option{{ file == currentLog ? ' selected' }}>{{ file }}</option>
 		{% endfor %}
 	</select>
 </form>
 
-<hr>
+<hr style="margin-bottom:0">
 
-<pre style="max-width:calc(100vw - 498px);overflow:auto;padding:0 24px;margin-left:-24px;"><!--
-	--><code>{{ log }}</code>
+<pre style="flex-grow:1;overflow:auto;padding:24px 24px 48px;margin:0 -24px;"><!--
+	--><code id="__log">Loading...</code>
 </pre>

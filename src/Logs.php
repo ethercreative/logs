@@ -10,6 +10,10 @@ use yii\base\Event;
 class Logs extends Plugin
 {
 
+	public $controllerMap = [
+		'logs' => Controller::class,
+	];
+
 	public function init ()
 	{
 		parent::init();

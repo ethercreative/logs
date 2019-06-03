@@ -41,7 +41,10 @@ class Utility extends \craft\base\Utility
 		if (!count($logFiles))
 			return '<p>You don\'t have any log files.</p>';
 
-		$currentLog = Craft::$app->request->get('log', $logFiles[0]);
+		$currentLog = basename(Craft::$app->request->get('log', $logFiles[0]));
+
+		if (strpos($currentLog, '.log') === false)
+			return '<p>You can only access <code>.log</code> files!</p>';
 
 		$url = explode('?log', Craft::$app->request->url)[0];
 

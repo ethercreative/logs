@@ -110,7 +110,7 @@ JS;
 
 		return Craft::$app->view->renderTemplate(
 			'logs/view',
-			compact('currentLog', 'logFiles', 'log')
+			compact('currentLog', 'logFiles')
 		);
 	}
 

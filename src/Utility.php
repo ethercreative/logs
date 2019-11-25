@@ -34,7 +34,7 @@ class Utility extends \craft\base\Utility
 		$logFiles = array_values(array_filter(
 			scandir($logsDir),
 			function ($var) {
-				return $var[0] != '.';
+				return $var[0] != '.' && strpos($var, '.log');
 			}
 		));
 

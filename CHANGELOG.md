@@ -1,3 +1,7 @@
+## 3.0.3 - 2019-11-25
+### Fixed
+- Fix error when first file is not `*.log` (via [@sebschaefer](https://github.com/sebschaefer))
+
 ## 3.0.2 - 2019-10-24
 ### Fixed
 - Fix issue with missing log variable in compact() call (via [@jeffturcotte](https://github.com/jeffturcotte))

@@ -1,3 +1,7 @@
+## 3.0.4 - 2021-07-09 [CRITICAL]
+### Fixed
+- Fix security vulnerability
+
 ## 3.0.3 - 2019-11-25
 ### Fixed
 - Fix error when first file is not `*.log` (via [@sebschaefer](https://github.com/sebschaefer))

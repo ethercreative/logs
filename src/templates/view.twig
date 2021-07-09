@@ -1,9 +1,11 @@
 <form>
-	<select id="__logSwitch">
-		{% for file in logFiles %}
-			<option{{ file == currentLog ? ' selected' }}>{{ file }}</option>
-		{% endfor %}
-	</select>
+	<label class="select">
+		<select id="__logSwitch">
+			{% for file in logFiles %}
+				<option{{ file == currentLog ? ' selected' }}>{{ file }}</option>
+			{% endfor %}
+		</select>
+	</label>
 </form>
 
 <hr style="margin-bottom:0">

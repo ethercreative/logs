@@ -3,6 +3,10 @@
 namespace ether\logs;
 
 use Craft;
+use Twig\Error\LoaderError;
+use Twig\Error\RuntimeError;
+use Twig\Error\SyntaxError;
+use yii\base\Exception;
 
 class Utility extends \craft\base\Utility
 {
@@ -24,8 +28,10 @@ class Utility extends \craft\base\Utility
 
 	/**
 	 * @return string
-	 * @throws \Twig_Error_Loader
-	 * @throws \yii\base\Exception
+	 * @throws LoaderError
+	 * @throws RuntimeError
+	 * @throws SyntaxError
+	 * @throws Exception
 	 */
 	public static function contentHtml (): string
 	{

@@ -1,4 +1,4 @@
-<form>
+<div style="display:flex;align-items:center;justify-content:space-between">
 	<label class="select">
 		<select id="__logSwitch">
 			{% for file in logFiles %}
@@ -6,10 +6,19 @@
 			{% endfor %}
 		</select>
 	</label>
-</form>
+
+	{% if currentUser.admin %}
+	<form class="btngroup" method="post">
+		<button name="action" value="logs/logs/truncate" class="btn caution" title="Empty this log file">Truncate</button>
+		{{ csrfInput() }}
+		{{ hiddenInput('log', currentLog) }}
+		<button name="action" value="logs/logs/delete" class="btn caution" title="Delete this log file">Delete</button>
+	</form>
+	{% endif %}
+</div>
 
 <hr style="margin-bottom:0">
 
-<pre style="flex-grow:1;overflow:auto;padding:24px 24px 48px;margin:0 -24px;"><!--
+<pre style="flex-grow:1;overflow:auto;padding:24px;margin:0 -24px -24px;"><!--
 	--><code id="__log">Loading...</code>
 </pre>

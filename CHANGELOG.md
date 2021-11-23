@@ -1,3 +1,7 @@
+## 3.0.5 - 2021-11-23
+### Added
+- Add truncate / delete buttons
+
 ## 3.0.4 - 2021-07-09 [CRITICAL]
 ### Fixed
 - Fix security vulnerability

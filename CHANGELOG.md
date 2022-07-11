@@ -1,3 +1,7 @@
+## 4.0.0 - 2022-07-11
+### Changed
+- Craft 4 release
+
 ## 3.0.5 - 2021-11-23
 ### Added
 - Add truncate / delete buttons

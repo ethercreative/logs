@@ -1,3 +1,7 @@
+## 3.0.6 - 2022-05-10
+### Fixed
+- Escape unsafe HTML, this allows XML and HTML tags to display as text instead of render
+
 ## 3.0.5 - 2021-11-23
 ### Added
 - Add truncate / delete buttons

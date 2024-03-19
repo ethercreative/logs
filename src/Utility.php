@@ -21,7 +21,7 @@ class Utility extends \craft\base\Utility
 		return 'logs';
 	}
 
-	public static function iconPath ()
+	public static function iconPath (): null|string
 	{
 		return Craft::getAlias('@ether/logs/utility_icon.svg');
 	}

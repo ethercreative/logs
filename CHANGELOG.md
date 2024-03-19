@@ -1,3 +1,11 @@
+## 4.0.1 - 2024-03-19
+### Fixed
+- Escape unsafe HTML, this allows XML and HTML tags to display as text instead of render
+
+## 3.0.6 - 2022-05-10
+### Fixed
+- Escape unsafe HTML, this allows XML and HTML tags to display as text instead of render
+
 ## 4.0.0 - 2022-07-11
 ### Changed
 - Craft 4 release

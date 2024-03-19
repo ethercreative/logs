@@ -63,6 +63,43 @@ class Utility extends \craft\base\Utility
 CSS;
 
 		$js = <<<JS
+/** Mixin to extend the String type with a method to escape unsafe characters
+ *  for use in HTML.  Uses OWASP guidelines for safe strings in HTML.
+ * 
+ *  Credit: http://benv.ca/2012/10/4/you-are-probably-misusing-DOM-text-methods/
+ *          https://github.com/janl/mustache.js/blob/16ffa430a111dc293cd9ed899ecf9da3729f58bd/mustache.js#L62
+ *
+ *  Maintained by stevejansen_github@icloud.com
+ *
+ *  @license http://opensource.org/licenses/MIT
+ *
+ *  @version 1.0
+ *
+ *  @mixin
+ */
+(function(){
+  "use strict";
+
+  function escapeHtml() {
+    return this.replace(/[&<>"'\/]/g, function (s) {
+      var entityMap = {
+          "&": "&amp;",
+          "<": "&lt;",
+          ">": "&gt;",
+          '"': '&quot;',
+          "'": '&#39;',
+          "/": '&#x2F;'
+        };
+
+      return entityMap[s];
+    });
+  }
+
+  if (typeof(String.prototype.escapeHtml) !== 'function') {
+    String.prototype.escapeHtml = escapeHtml;
+  }
+})();
+
 const logElem = document.getElementById("__log");
 
 function streamLog (log) {
@@ -75,7 +112,7 @@ function streamLog (log) {
 	}).then(data => data.text()).then(data => {
 		let html = "";
 		
-		data.split("\\n").forEach(line => {
+		data.escapeHtml().split("\\n").forEach(line => {
 			let m = /^(\d{4}(-\d{2}){2} (\d{2}:){2}\d{2}) (\[[^\]]+\]){3}\[([^\]]+)\]\[([^\]]+)\]/i.exec(line);
 			if (m !== null) {
 				let colour = "";

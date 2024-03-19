@@ -1,6 +1,7 @@
 {
   "name": "ether/logs",
   "description": "Access logs from the CP",
+  "version": "4.0.1",
   "type": "craft-plugin",
   "minimum-stability": "dev",
   "require": {
